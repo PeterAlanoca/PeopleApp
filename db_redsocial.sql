@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2016 a las 02:07:46
+-- Tiempo de generación: 04-07-2016 a las 03:29:04
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -23,6 +23,55 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `eventos`
+--
+
+CREATE TABLE IF NOT EXISTS `eventos` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `contenido` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grupos`
+--
+
+CREATE TABLE IF NOT EXISTS `grupos` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `mensaje`
+--
+
+CREATE TABLE IF NOT EXISTS `mensaje` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `contenido` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notificaciones`
+--
+
+CREATE TABLE IF NOT EXISTS `notificaciones` (
+  `id` int(11) NOT NULL,
+  `nombre` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `fecha` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `publicacion`
 --
 
@@ -32,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   `contenido` text NOT NULL,
   `tipo` varchar(100) NOT NULL,
   `fecha` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `publicacion`
@@ -49,7 +98,11 @@ INSERT INTO `publicacion` (`id`, `id_usuario`, `contenido`, `tipo`, `fecha`) VAL
 (51, 1, 'asasa.mp4', 'mp4', '01/07/2016 19:50:11'),
 (52, 1, 'fondo.jpg', 'jpg', '01/07/2016 19:51:16'),
 (53, 2, 'hola que tal', 'tal', '01/07/2016 19:56:34'),
-(54, 1, 'as.mp4', 'mp4', '01/07/2016 20:00:23');
+(54, 1, 'as.mp4', 'mp4', '01/07/2016 20:00:23'),
+(55, 2, 'asasasa.mp4', 'mp4', '01/07/2016 20:15:35'),
+(56, 3, '13533235_1763122787235372_8553434447402920243_n.jpg', 'jpg', '01/07/2016 20:16:51'),
+(57, 3, 'Coldplay - Lost.mp3', 'mp3', '01/07/2016 20:17:20'),
+(58, 1, 'assssasa.mp4', 'mp4', '01/07/2016 20:19:19');
 
 -- --------------------------------------------------------
 
@@ -103,7 +156,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
